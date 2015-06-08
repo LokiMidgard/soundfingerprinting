@@ -1,6 +1,7 @@
 namespace SoundFingerprinting.Audio
 {
     using System.Threading;
+    using System.Threading.Tasks;
 
     public class ContinuousStreamSamplesProvider : ISamplesProvider
     {
@@ -19,7 +20,11 @@ namespace SoundFingerprinting.Audio
 
             while (bytesRead == 0)
             {
+#if WINDOWS_UAP
+                Task.Delay(MillisecondsTimeout).Wait(); // lame but required to fill the buffer from continuous stream, either microphone or url
+#else
                 Thread.Sleep(MillisecondsTimeout); // lame but required to fill the buffer from continuous stream, either microphone or url
+#endif
                 bytesRead = provider.GetNextSamples(buffer);
             }
 

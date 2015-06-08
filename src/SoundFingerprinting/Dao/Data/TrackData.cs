@@ -2,10 +2,18 @@
 {
     using System;
 
+#if WINDOWS_UAP
+    using System.Runtime.Serialization;
+#endif
+
     using SoundFingerprinting.DAO;
     using SoundFingerprinting.Data;
 
+#if WINDOWS_UAP
+    [DataContract]
+#else
     [Serializable]
+#endif
     public class TrackData
     {
         public TrackData()
@@ -29,20 +37,44 @@
             TrackReference = trackReference;
         }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public string Artist { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public string Title { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public string ISRC { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public string Album { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public int ReleaseYear { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public double TrackLengthSec { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public string GroupId { get; set; }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         [IgnoreBinding]
         public IModelReference TrackReference { get; set; }
 

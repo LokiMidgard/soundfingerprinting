@@ -12,7 +12,7 @@
         private readonly string separator;
 
         private int[][] permutations;
-        
+
         public LocalFilePermutations(string pathToPermutations, string separator)
         {
             this.pathToPermutations = pathToPermutations;
@@ -27,7 +27,11 @@
             }
 
             List<int[]> result = new List<int[]>();
+#if WINDOWS_UAP
+            using (StreamReader reader = new StreamReader(Windows.Storage.StorageFile.GetFileFromPathAsync(pathToPermutations).GetResults().OpenStreamForWriteAsync().Result))
+#else
             using (StreamReader reader = new StreamReader(pathToPermutations))
+#endif
             {
                 while (reader.Peek() != -1)
                 {

@@ -174,7 +174,11 @@
 
         public static double MutualInformation(int[] p, int[] groupMember)
         {
+#if WINDOWS_UAP
+            return MutualInformation(p.Cast<double>().ToArray(), groupMember.Cast<double>().ToArray());
+#else
             return MutualInformation(Array.ConvertAll(p, item => (double)item), Array.ConvertAll(groupMember, item => (double)item));
+#endif
         }
     }
 }

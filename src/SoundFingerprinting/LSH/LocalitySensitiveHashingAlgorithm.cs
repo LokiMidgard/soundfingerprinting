@@ -44,7 +44,11 @@
         {
             if (numberOfHashesPerTable % 2 != 0)
             {
+#if WINDOWS_UAP
+                Debug.WriteLine(
+#else
                 Trace.WriteLine(
+#endif
                     "Number of min hash values per table is not equal to power of 2. Expect performance penalty!", "Warning");
                 return NonPowerOfTwoGroupIntoHashBucket(minHashes, numberOfHashTables, numberOfHashesPerTable);
             }

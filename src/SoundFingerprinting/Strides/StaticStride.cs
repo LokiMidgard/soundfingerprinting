@@ -2,10 +2,18 @@
 {
     using System;
 
+    #if WINDOWS_UAP
+    using System.Runtime.Serialization;
+#endif
+
     /// <summary>
     ///   Static Stride class
     /// </summary>
+#if WINDOWS_UAP
+    [DataContract]
+#else
     [Serializable]
+#endif
     public class StaticStride : IStride
     {
         private readonly int nextStride;
@@ -36,6 +44,9 @@
             FirstStride = firstStride;
         }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public int FirstStride { get; protected set; }
 
         public int GetNextStride()

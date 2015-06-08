@@ -1,7 +1,12 @@
 ﻿namespace SoundFingerprinting.MinHash.Permutations
 {
     using System;
+#if WINDOWS_UAP
+    using System.Runtime.InteropServices.WindowsRuntime;
+    using Windows.Security.Cryptography;
+#else
     using System.Security.Cryptography;
+#endif
 
     /// <summary>
     ///   Hash class used in hashing purposes (projection hash with random permutations used)
@@ -13,21 +18,25 @@
         /// </summary>
         private readonly object lockObject = new object();
 
+#if !WINDOWS_UAP
         /// <summary>
         ///   Random number generator used for seed generation
         /// </summary>
         private readonly RandomNumberGenerator rng = new RNGCryptoServiceProvider();
+#endif
+
 
         /// <summary>
         ///   Matrix of random projection values
         /// </summary>
         private int[][] randomMatrix;
 
+#if !WINDOWS_UAP
         ~Hash()
         {
             Dispose(false);
         }
-
+#endif
         /// <summary>
         ///   Get a random matrix for projection purposes
         /// </summary>
@@ -81,10 +90,13 @@
 
         public void Dispose()
         {
+#if !WINDOWS_UAP
             Dispose(true);
             GC.SuppressFinalize(this);
+#endif
         }
 
+#if !WINDOWS_UAP
         protected virtual void Dispose(bool isDisposing)
         {
             if (isDisposing)
@@ -92,6 +104,7 @@
                 rng.Dispose();
             }
         }
+#endif
 
         /// <summary>
         ///   Generates a random matrix for projection purposes
@@ -106,8 +119,14 @@
             {
                 if (randomMatrix == null)
                 {
+
+#if WINDOWS_UAP
+                    Windows.Storage.Streams.IBuffer randomBuffer = CryptographicBuffer.GenerateRandom(32);
+                    byte[] seed = randomBuffer.ToArray();
+#else
                     byte[] seed = new byte[32];
                     rng.GetBytes(seed);
+#endif
                     Random random = new Random(BitConverter.ToInt32(seed, 0));
                     int[][] randomArray = new int[rows][];
 

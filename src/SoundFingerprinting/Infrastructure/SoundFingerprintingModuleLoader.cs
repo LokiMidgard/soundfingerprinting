@@ -27,7 +27,11 @@
             kernel.Bind<IAudioSamplesNormalizer>().To<AudioSamplesNormalizer>().InSingletonScope();
             kernel.Bind<IWaveletDecomposition>().To<StandardHaarWaveletDecomposition>().InSingletonScope();
             kernel.Bind<IFFTService>().To<CachedFFTWService>().InSingletonScope();
+#if WINDOWS_UAP
+            if(false)
+#else
             if (Environment.Is64BitProcess)
+#endif
             {
                 kernel.Bind<FFTWService>().To<FFTWService64>().WhenInjectedInto<CachedFFTWService>().InSingletonScope();
             }

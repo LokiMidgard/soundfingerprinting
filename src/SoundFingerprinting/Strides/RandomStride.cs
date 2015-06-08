@@ -2,10 +2,19 @@
 {
     using System;
 
+#if WINDOWS_UAP
+    using System.Runtime.Serialization;
+#endif
+
+
     /// <summary>
     ///   Random stride object. [min - max Samples stride]
     /// </summary>
+#if WINDOWS_UAP
+    [DataContract]
+#else
     [Serializable]
+#endif
     public class RandomStride : IStride
     {
         protected static readonly Random Random = new Random(unchecked((int)DateTime.Now.Ticks));
@@ -43,6 +52,9 @@
             this.firstStride = firstStride;
         }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public int Min
         {
             get
@@ -51,6 +63,9 @@
             }
         }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public int Max
         {
             get
@@ -59,6 +74,9 @@
             }
         }
 
+#if WINDOWS_UAP
+        [DataMember]
+#endif
         public int FirstStride
         {
             get
