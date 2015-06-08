@@ -26,12 +26,54 @@
             kernel.Bind<ILogUtility>().To<LogUtility>().InSingletonScope();
             kernel.Bind<IAudioSamplesNormalizer>().To<AudioSamplesNormalizer>().InSingletonScope();
             kernel.Bind<IWaveletDecomposition>().To<StandardHaarWaveletDecomposition>().InSingletonScope();
-            kernel.Bind<IFFTService>().To<CachedFFTWService>().InSingletonScope();
 #if WINDOWS_UAP
-            if(false)
+            bool noARM = false;
+            bool noX64 = false;
+            bool noX86 = false;
+            try
+            {
+                using (var x = new FFTWService64())
+                    x.FFTForward(new float[] { 0, 0, 1, 0, 0 }, 0, 5);
+            }
+            catch
+            {
+                noX64 = true;
+            }
+
+            try
+            {
+                using (var x = new FFTWService86())
+                    x.FFTForward(new float[] { 0, 0, 1, 0, 0 }, 0, 5);
+            }
+            catch
+            {
+                noX86 = true;
+            }
+
+            try
+            {
+                using (var x = new FFTWServiceARM())
+                    x.FFTForward(new float[] { 0, 0, 1, 0, 0 }, 0, 5);
+            }
+            catch
+            {
+                noARM = true;
+            }
+            
+            if (noX86 && noX64 && noARM)
+                kernel.Bind<IFFTService>().To<FFTWServiceFallBack>().InSingletonScope();
+            else
+                kernel.Bind<IFFTService>().To<CachedFFTWService>().InSingletonScope();
+
+            if (!noX64)
+                kernel.Bind<FFTWService>().To<FFTWService64>().WhenInjectedInto<CachedFFTWService>().InSingletonScope();
+            else if (!noX86)
+                kernel.Bind<FFTWService>().To<FFTWService86>().WhenInjectedInto<CachedFFTWService>().InSingletonScope();
+            else if (!noARM)
+                kernel.Bind<FFTWService>().To<FFTWServiceARM>().WhenInjectedInto<CachedFFTWService>().InSingletonScope();
 #else
+            kernel.Bind<IFFTService>().To<CachedFFTWService>().InSingletonScope();
             if (Environment.Is64BitProcess)
-#endif
             {
                 kernel.Bind<FFTWService>().To<FFTWService64>().WhenInjectedInto<CachedFFTWService>().InSingletonScope();
             }
@@ -39,9 +81,10 @@
             {
                 kernel.Bind<FFTWService>().To<FFTWService86>().WhenInjectedInto<CachedFFTWService>().InSingletonScope();
             }
+#endif
 
             kernel.Bind<IFingerprintDescriptor>().To<FingerprintDescriptor>().InSingletonScope();
-            
+
             kernel.Bind<IMinHashService>().To<MinHashService>().InSingletonScope();
             kernel.Bind<IPermutations>().To<DefaultPermutations>().InSingletonScope();
             kernel.Bind<ILocalitySensitiveHashingAlgorithm>().To<LocalitySensitiveHashingAlgorithm>().InSingletonScope();

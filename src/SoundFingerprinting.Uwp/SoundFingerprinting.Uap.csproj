@@ -454,7 +454,10 @@
     <Compile Include="..\SoundFingerprinting\Wavelets\StandardHaarWaveletDecomposition.cs">
       <Link>Wavelets\StandardHaarWaveletDecomposition.cs</Link>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="FFT\FFTW\ARM\FFTWFNativeMethods.cs" />
+    <Compile Include="FFT\FFTW\ARM\FFTWNativeMethods.cs" />
+    <Compile Include="FFT\FFTW\FFTWServiceARM.cs" />
+    <Compile Include="FFT\FFTW\FFTWServiceFallBack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
