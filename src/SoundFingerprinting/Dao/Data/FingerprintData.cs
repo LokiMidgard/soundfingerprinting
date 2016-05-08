@@ -2,14 +2,14 @@
 {
     using System;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     using System.Runtime.Serialization;
 #endif
 
     using SoundFingerprinting.DAO;
     using SoundFingerprinting.Data;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     [DataContract]
 #else
     [Serializable]
@@ -27,19 +27,19 @@
             TrackReference = trackReference;
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         [IgnoreBinding]
         public bool[] Signature { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         [IgnoreBinding]
         public IModelReference FingerprintReference { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         [IgnoreBinding]

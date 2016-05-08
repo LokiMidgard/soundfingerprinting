@@ -2,14 +2,14 @@
 {
     using System;
 
-    #if WINDOWS_UAP
+    #if WINDOWS_UWP
     using System.Runtime.Serialization;
 #endif
 
     /// <summary>
     ///   Static Stride class
     /// </summary>
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     [DataContract]
 #else
     [Serializable]
@@ -44,7 +44,7 @@
             FirstStride = firstStride;
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public int FirstStride { get; protected set; }

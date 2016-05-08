@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoundFingerprinting.Audio.Uap
+namespace SoundFingerprinting.Infrastructure.UWP
 {
     public class Class1
     {

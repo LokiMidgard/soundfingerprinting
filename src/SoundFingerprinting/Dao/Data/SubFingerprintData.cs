@@ -2,14 +2,14 @@
 {
     using System;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     using System.Runtime.Serialization;
 #endif
 
     using SoundFingerprinting.DAO;
     using SoundFingerprinting.Data;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     [DataContract]
 #else
     [Serializable]
@@ -30,28 +30,28 @@
             SequenceAt = sequenceAt;
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public byte[] Signature { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public int SequenceNumber { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public double SequenceAt { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         [IgnoreBinding]
         public IModelReference SubFingerprintReference { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         [IgnoreBinding]

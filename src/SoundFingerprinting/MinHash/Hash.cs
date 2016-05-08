@@ -1,7 +1,7 @@
 ﻿namespace SoundFingerprinting.MinHash.Permutations
 {
     using System;
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     using System.Runtime.InteropServices.WindowsRuntime;
     using Windows.Security.Cryptography;
 #else
@@ -18,7 +18,7 @@
         /// </summary>
         private readonly object lockObject = new object();
 
-#if !WINDOWS_UAP
+#if !WINDOWS_UWP
         /// <summary>
         ///   Random number generator used for seed generation
         /// </summary>
@@ -31,7 +31,7 @@
         /// </summary>
         private int[][] randomMatrix;
 
-#if !WINDOWS_UAP
+#if !WINDOWS_UWP
         ~Hash()
         {
             Dispose(false);
@@ -90,13 +90,13 @@
 
         public void Dispose()
         {
-#if !WINDOWS_UAP
+#if !WINDOWS_UWP
             Dispose(true);
             GC.SuppressFinalize(this);
 #endif
         }
 
-#if !WINDOWS_UAP
+#if !WINDOWS_UWP
         protected virtual void Dispose(bool isDisposing)
         {
             if (isDisposing)
@@ -120,7 +120,7 @@
                 if (randomMatrix == null)
                 {
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
                     Windows.Storage.Streams.IBuffer randomBuffer = CryptographicBuffer.GenerateRandom(32);
                     byte[] seed = randomBuffer.ToArray();
 #else

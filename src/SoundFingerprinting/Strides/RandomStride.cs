@@ -2,7 +2,7 @@
 {
     using System;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     using System.Runtime.Serialization;
 #endif
 
@@ -10,7 +10,7 @@
     /// <summary>
     ///   Random stride object. [min - max Samples stride]
     /// </summary>
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     [DataContract]
 #else
     [Serializable]
@@ -52,7 +52,7 @@
             this.firstStride = firstStride;
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public int Min
@@ -63,7 +63,7 @@
             }
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public int Max
@@ -74,7 +74,7 @@
             }
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public int FirstStride

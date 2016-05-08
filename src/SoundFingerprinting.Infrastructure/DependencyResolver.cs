@@ -6,7 +6,7 @@
     using System.Reflection;
     using System.Threading.Tasks;
     using Ninject;
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     using Windows.ApplicationModel;
 #endif
 
@@ -66,7 +66,7 @@
 
             private void SubscribeToAssemblyLoadingEvent()
             {
-#if WINDOWS_UAP
+#if WINDOWS_UWP
             }
 
 #else
@@ -84,7 +84,7 @@
 
             private void LoadAllAssemblyBindings()
             {
-#if WINDOWS_UAP
+#if WINDOWS_UWP
                 Task.Run(async () =>
                 {
                     var folder = Package.Current.InstalledLocation;
@@ -124,7 +124,7 @@
 
             private IEnumerable<IModuleLoader> GetModuleLoaders(Assembly loadedAssembly)
             {
-#if WINDOWS_UAP
+#if WINDOWS_UWP
                 var moduleLoaders = from type in loadedAssembly.DefinedTypes
                                     where type.ImplementedInterfaces.Contains(typeof(IModuleLoader)) && (type.DeclaredConstructors.Where(c => c.GetParameters().Length == 0).Any() || !type.DeclaredConstructors.Any())
                                     select Activator.CreateInstance(type.AsType()) as IModuleLoader;

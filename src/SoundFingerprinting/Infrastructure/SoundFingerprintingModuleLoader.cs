@@ -26,7 +26,7 @@
             kernel.Bind<ILogUtility>().To<LogUtility>().InSingletonScope();
             kernel.Bind<IAudioSamplesNormalizer>().To<AudioSamplesNormalizer>().InSingletonScope();
             kernel.Bind<IWaveletDecomposition>().To<StandardHaarWaveletDecomposition>().InSingletonScope();
-#if WINDOWS_UAP
+#if WINDOWS_UWP
             bool noARM = false;
             bool noX64 = false;
             bool noX86 = false;

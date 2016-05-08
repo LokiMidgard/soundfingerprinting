@@ -48,7 +48,7 @@ namespace SoundFingerprinting.Utils
             }
 
             int[] indexes = Enumerable.Range(0, concatenated.Length).ToArray();
-#if WINDOWS_UAP
+#if WINDOWS_UWP
             concatenated = concatenated.Select((value, index) => new { value, index }).OrderBy(x => x.index, absComparator).Select(x => x.value).ToArray();
 #else
             Array.Sort(concatenated, indexes, absComparator);

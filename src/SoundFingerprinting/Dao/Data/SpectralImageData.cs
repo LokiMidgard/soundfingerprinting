@@ -2,7 +2,7 @@
 {
     using System;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     using System.Runtime.Serialization;
 #endif
 
@@ -10,7 +10,7 @@
     using SoundFingerprinting.DAO;
     using SoundFingerprinting.Data;
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
     [DataContract]
 #else
     [Serializable]
@@ -24,17 +24,17 @@
             OrderNumber = orderNumber;
         }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public float[] Image { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         public int OrderNumber { get; set; }
 
-#if WINDOWS_UAP
+#if WINDOWS_UWP
         [DataMember]
 #endif
         [IgnoreBinding]

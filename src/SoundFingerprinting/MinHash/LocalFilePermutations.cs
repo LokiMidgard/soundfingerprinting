@@ -27,7 +27,7 @@
             }
 
             List<int[]> result = new List<int[]>();
-#if WINDOWS_UAP
+#if WINDOWS_UWP
             using (StreamReader reader = new StreamReader(Windows.Storage.StorageFile.GetFileFromPathAsync(pathToPermutations).GetResults().OpenStreamForWriteAsync().Result))
 #else
             using (StreamReader reader = new StreamReader(pathToPermutations))

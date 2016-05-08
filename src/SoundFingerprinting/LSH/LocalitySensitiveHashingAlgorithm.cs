@@ -44,7 +44,7 @@
         {
             if (numberOfHashesPerTable % 2 != 0)
             {
-#if WINDOWS_UAP
+#if WINDOWS_UWP
                 Debug.WriteLine(
 #else
                 Trace.WriteLine(
