@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1BFD4B6-8E3E-4E90-9AFD-7E6F1DCF2776}</ProjectGuid>
+    <ProjectGuid>{CAF07DE7-F819-4BD9-AF90-608632599D61}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SoundFingerprinting.Audio.UWP</RootNamespace>
     <AssemblyName>SoundFingerprinting.Audio.UWP</AssemblyName>
     <DefaultLanguage>de-DE</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.14295.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -161,16 +161,12 @@
     <Compile Include="..\SoundFingerprinting.Audio\TagInfo.cs">
       <Link>TagInfo.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\SoundFingerprinting.Audio.UWP.rd.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\SoundFingerprinting.Audio.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoundFingerprinting.Infrastructure.UWP\SoundFingerprinting.Infrastructure.UWP.csproj">
-      <Project>{23c392da-dc44-42d7-a2f8-aad7d7c04dcd}</Project>
+      <Project>{5be173c6-0022-4a97-bc90-680261548257}</Project>
       <Name>SoundFingerprinting.Infrastructure.UWP</Name>
     </ProjectReference>
   </ItemGroup>
