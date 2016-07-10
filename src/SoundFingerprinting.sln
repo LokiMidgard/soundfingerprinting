@@ -34,6 +34,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.Audio.U
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lagecy", "Lagecy", "{2CB3650F-8D9A-45C2-95A2-6D9123771FCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicAnalizer", "MusicAnalizer\MusicAnalizer.csproj", "{8AC1098B-CEE3-4D79-95D5-280AF722669B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{110BE09B-880B-403E-8BFA-992D1982143F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -216,6 +220,52 @@ Global
 		{CAF07DE7-F819-4BD9-AF90-608632599D61}.Release|x64.Build.0 = Release|x64
 		{CAF07DE7-F819-4BD9-AF90-608632599D61}.Release|x86.ActiveCfg = Release|x86
 		{CAF07DE7-F819-4BD9-AF90-608632599D61}.Release|x86.Build.0 = Release|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|ARM.Build.0 = Debug|ARM
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|x64.ActiveCfg = Debug|x64
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|x64.Build.0 = Debug|x64
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|x86.ActiveCfg = Debug|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Debug|x86.Build.0 = Debug|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|ARM.ActiveCfg = Release|ARM
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|ARM.Build.0 = Release|ARM
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|x64.ActiveCfg = Release|x64
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|x64.Build.0 = Release|x64
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|x86.ActiveCfg = Release|x86
+		{8AC1098B-CEE3-4D79-95D5-280AF722669B}.Release|x86.Build.0 = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|ARM.ActiveCfg = Debug|ARM
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|ARM.Build.0 = Debug|ARM
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|ARM.Deploy.0 = Debug|ARM
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|x64.ActiveCfg = Debug|x64
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|x64.Build.0 = Debug|x64
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|x64.Deploy.0 = Debug|x64
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|x86.ActiveCfg = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|x86.Build.0 = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Debug|x86.Deploy.0 = Debug|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|Any CPU.ActiveCfg = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|ARM.ActiveCfg = Release|ARM
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|ARM.Build.0 = Release|ARM
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|ARM.Deploy.0 = Release|ARM
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|x64.ActiveCfg = Release|x64
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|x64.Build.0 = Release|x64
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|x64.Deploy.0 = Release|x64
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|x86.ActiveCfg = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|x86.Build.0 = Release|x86
+		{110BE09B-880B-403E-8BFA-992D1982143F}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
