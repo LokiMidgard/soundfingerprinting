@@ -38,6 +38,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.Infrast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.Audio.UWP", "SoundFingerprinting.Audio.UWP\SoundFingerprinting.Audio.UWP.csproj", "{2F78A6D2-1D9F-4DE5-9CCB-2F1ABB0D50D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lagecy", "Lagecy", "{2CB3650F-8D9A-45C2-95A2-6D9123771FCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{110BE09B-880B-403E-8BFA-992D1982143F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
