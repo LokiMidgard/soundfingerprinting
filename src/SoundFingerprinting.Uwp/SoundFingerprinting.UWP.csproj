@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E5C8007-B51C-4C4D-9B88-B0FE825C6F0C}</ProjectGuid>
+    <ProjectGuid>{47288A02-832C-41DF-B625-D4BB572736DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SoundFingerprinting.UWP</RootNamespace>
     <AssemblyName>SoundFingerprinting.UWP</AssemblyName>
-    <DefaultLanguage>de-DE</DefaultLanguage>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.14295.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -105,36 +105,6 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\SoundFingerprinting.UWP.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\SoundFingerprinting\x64\libfftw3-3.dll">
-      <Link>x64\libfftw3-3.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SoundFingerprinting\x64\libfftw3f-3.dll">
-      <Link>x64\libfftw3f-3.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SoundFingerprinting\x64\libfftw3l-3.dll">
-      <Link>x64\libfftw3l-3.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SoundFingerprinting\x86\libfftw3-3.dll">
-      <Link>x86\libfftw3-3.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SoundFingerprinting\x86\libfftw3f-3.dll">
-      <Link>x86\libfftw3f-3.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\SoundFingerprinting\x86\libfftw3l-3.dll">
-      <Link>x86\libfftw3l-3.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SoundFingerprinting\Builder\FingerprintCommandBuilder.cs">
@@ -486,14 +456,42 @@
     <Compile Include="FFT\FFTW\ARM\FFTWNativeMethods.cs" />
     <Compile Include="FFT\FFTW\FFTWServiceARM.cs" />
     <Compile Include="FFT\FFTW\FFTWServiceFallBack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\SoundFingerprinting.UWP.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\SoundFingerprinting\x64\libfftw3-3.dll">
+      <Link>x64\libfftw3-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SoundFingerprinting\x64\libfftw3f-3.dll">
+      <Link>x64\libfftw3f-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SoundFingerprinting\x64\libfftw3l-3.dll">
+      <Link>x64\libfftw3l-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SoundFingerprinting\x86\libfftw3-3.dll">
+      <Link>x86\libfftw3-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SoundFingerprinting\x86\libfftw3f-3.dll">
+      <Link>x86\libfftw3f-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SoundFingerprinting\x86\libfftw3l-3.dll">
+      <Link>x86\libfftw3l-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoundFingerprinting.Audio.UWP\SoundFingerprinting.Audio.UWP.csproj">
-      <Project>{d1bfd4b6-8e3e-4e90-9afd-7e6f1dcf2776}</Project>
+      <Project>{2f78a6d2-1d9f-4de5-9ccb-2f1abb0d50d0}</Project>
       <Name>SoundFingerprinting.Audio.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoundFingerprinting.Infrastructure.UWP\SoundFingerprinting.Infrastructure.UWP.csproj">
-      <Project>{23c392da-dc44-42d7-a2f8-aad7d7c04dcd}</Project>
+      <Project>{dc5e25ef-ccfe-4990-aaab-711f067d5e55}</Project>
       <Name>SoundFingerprinting.Infrastructure.UWP</Name>
     </ProjectReference>
   </ItemGroup>
