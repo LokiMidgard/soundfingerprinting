@@ -18,13 +18,13 @@ using Windows.UI.Xaml.Navigation;
 namespace SampleApp
 {
     /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
+    /// Stellt das anwendungsspezifische Verhalten bereit, um die Standardanwendungsklasse zu ergänzen.
     /// </summary>
     sealed partial class App : Application
     {
         /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
+        /// Initialisiert das Singletonanwendungsobjekt. Dies ist die erste Zeile von erstelltem Code
+        /// und daher das logische Äquivalent von main() bzw. WinMain().
         /// </summary>
         public App()
         {
@@ -33,10 +33,10 @@ namespace SampleApp
         }
 
         /// <summary>
-        /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used such as when the application is launched to open a specific file.
+        /// Wird aufgerufen, wenn die Anwendung durch den Endbenutzer normal gestartet wird. Weitere Einstiegspunkte
+        /// werden z. B. verwendet, wenn die Anwendung gestartet wird, um eine bestimmte Datei zu öffnen.
         /// </summary>
-        /// <param name="e">Details about the launch request and process.</param>
+        /// <param name="e">Details über Startanforderung und -prozess.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
@@ -47,21 +47,21 @@ namespace SampleApp
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
 
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
+            // App-Initialisierung nicht wiederholen, wenn das Fenster bereits Inhalte enthält.
+            // Nur sicherstellen, dass das Fenster aktiv ist.
             if (rootFrame == null)
             {
-                // Create a Frame to act as the navigation context and navigate to the first page
+                // Frame erstellen, der als Navigationskontext fungiert und zum Parameter der ersten Seite navigieren
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    //TODO: Load state from previously suspended application
+                    //TODO: Zustand von zuvor angehaltener Anwendung laden
                 }
 
-                // Place the frame in the current Window
+                // Den Frame im aktuellen Fenster platzieren
                 Window.Current.Content = rootFrame;
             }
 
@@ -69,37 +69,37 @@ namespace SampleApp
             {
                 if (rootFrame.Content == null)
                 {
-                    // When the navigation stack isn't restored navigate to the first page,
-                    // configuring the new page by passing required information as a navigation
-                    // parameter
+                    // Wenn der Navigationsstapel nicht wiederhergestellt wird, zur ersten Seite navigieren
+                    // und die neue Seite konfigurieren, indem die erforderlichen Informationen als Navigationsparameter
+                    // übergeben werden
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
-                // Ensure the current window is active
+                // Sicherstellen, dass das aktuelle Fenster aktiv ist
                 Window.Current.Activate();
             }
         }
 
         /// <summary>
-        /// Invoked when Navigation to a certain page fails
+        /// Wird aufgerufen, wenn die Navigation auf eine bestimmte Seite fehlschlägt
         /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
+        /// <param name="sender">Der Rahmen, bei dem die Navigation fehlgeschlagen ist</param>
+        /// <param name="e">Details über den Navigationsfehler</param>
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
         /// <summary>
-        /// Invoked when application execution is being suspended.  Application state is saved
-        /// without knowing whether the application will be terminated or resumed with the contents
-        /// of memory still intact.
+        /// Wird aufgerufen, wenn die Ausführung der Anwendung angehalten wird.  Der Anwendungszustand wird gespeichert,
+        /// ohne zu wissen, ob die Anwendung beendet oder fortgesetzt wird und die Speicherinhalte dabei
+        /// unbeschädigt bleiben.
         /// </summary>
-        /// <param name="sender">The source of the suspend request.</param>
-        /// <param name="e">Details about the suspend request.</param>
+        /// <param name="sender">Die Quelle der Anhalteanforderung.</param>
+        /// <param name="e">Details zur Anhalteanforderung.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+            //TODO: Anwendungszustand speichern und alle Hintergrundaktivitäten beenden
             deferral.Complete();
         }
     }

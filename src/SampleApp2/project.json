@@ -1,8 +1,7 @@
 ﻿{
   "dependencies": {
-    "Apollon.Common": "0.0.6154.23300",
-    "Microsoft.Composition": "1.0.30",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+    "Apollon.Common": "*",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
   },
   "frameworks": {
     "uap10.0": {}
